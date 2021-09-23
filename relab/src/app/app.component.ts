@@ -8,6 +8,22 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'server mappe';
   //Aggiungiamo latitudine e longitudine di un luogo
-  lat: number = 45.506738;  
-  lng: number = 9.190766;
+  center : any;
+  
+  position : any;
+  positionCasa : any
+  label :string;
+  labelCasa : string;
+  
+  constructor()
+  {
+    this.center={lat: 45.506738, lng: 9.190766};
+    this.position = this.center;
+    this.label = "Scuola";
+
+    this.positionCasa={lat: 45.46342, lng: 9.19405};
+    
+    this.labelCasa = "Casa Mia";
+  }
+
 }
