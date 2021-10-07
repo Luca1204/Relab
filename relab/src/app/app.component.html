@@ -21,8 +21,28 @@
 [title]="title"
 [options] = "markerOptions">
 </map-marker>
+
+<map-marker [position]="position2" 
+[label]="label2" 
+[title]="title"
+[options] = "markerOptions2">
+</map-marker>
+
+<map-marker [position]="position3"
+[label]="label3" 
+[title]="title"
+[options] = "markerOptions3">
+</map-marker>
+<map-marker [position]="position4"
+[label]="label4" 
+[title]="title"
+[options] = "markerOptions4">
+</map-marker>
+
 </google-map>
 
-
+<button (click)="cambiacoloreBlu()">Blu</button>
+<button (click)="cambiacoloreVerde()">Verde</button>
+<button (click)="cambiacoloreMarrone()">Marrone</button>
 
 
