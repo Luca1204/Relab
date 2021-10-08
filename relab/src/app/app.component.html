@@ -39,10 +39,20 @@
 [options] = "markerOptions4">
 </map-marker>
 
+<map-polygon [paths]="vertices">
+</map-polygon>
+
+<map-polygon [paths]="rettangolo"
+            [options]='rectOption'>
+</map-polygon>
+
 </google-map>
 
 <button (click)="cambiacoloreBlu()">Blu</button>
 <button (click)="cambiacoloreVerde()">Verde</button>
 <button (click)="cambiacoloreMarrone()">Marrone</button>
+<button (click)="cambiacoloreBluR()">Rettangolo Blu</button>
+<button (click)="cambiacoloreVerdeR()">Rettangolo Verde</button>
+<button (click)="cambiacoloreMarroneR()">Rettangolo Marrone</button>
 
 

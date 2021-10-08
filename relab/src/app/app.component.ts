@@ -15,6 +15,7 @@ export class AppComponent {
   label :string;
   labelCasa : string;
   circleOptions: { fillColor: string; };
+  rectOption: { fillColor: string; };
   circleOptionsCasa: { fillColor: string; };
   markerOptions: google.maps.MarkerOptions;
   markerOptions2: { icon: google.maps.Icon; };
@@ -26,6 +27,9 @@ export class AppComponent {
   position4: { lat: number; lng: number; };
   label4: string;
   markerOptions4: { icon: any; };
+  vertices: google.maps.LatLngLiteral[];
+  rettangolo: google.maps.LatLngLiteral[];
+
 
 
   cambiacoloreBlu()
@@ -45,6 +49,23 @@ export class AppComponent {
     this.circleOptions = {fillColor : 'brown'},
     this.circleOptionsCasa = {fillColor : 'brown'}
   }
+
+
+  cambiacoloreBluR()
+  {
+    this.rectOption = {fillColor : 'blue'}
+    
+  }
+
+  cambiacoloreVerdeR()
+  {
+    this.rectOption = {fillColor : 'green'}
+  }
+
+  cambiacoloreMarroneR()
+  {
+    this.rectOption = {fillColor : 'brown'}
+  }
   constructor()
   {
     this.center={lat: 45.506738, lng: 9.190766};
@@ -54,13 +75,26 @@ export class AppComponent {
     this.position4 = {lat: 45.5612, lng: 9.190812};
     this.label = "Scuola";
     this.circleOptions = {fillColor : 'red'}
+    this.rectOption = {fillColor : 'black'}
     this.circleOptionsCasa = {fillColor : 'pink'}
     this.positionCasa={lat: 45.46342, lng: 9.19405};
     this.labelCasa = "Casa Mia";
     this.label2 = "Cane";
     this.label3 = "Criceto";
     this.label4 = "Orsetto";
+    this.vertices = [
+      {  lat: this.center.lat + 0.001, lng: this.center.lng - 0.002 },
+      {  lat: this.center.lat, lng: this.center.lng },
+      {  lat: this.center.lat - 0.001, lng: this.center.lng - 0.002}
+    ];
     
+    this.rettangolo = [
+      {  lat: this.center.lat + 0.001, lng: this.center.lng + 0.001 },
+      {  lat: this.center.lat + 0.001, lng: this.center.lng + 0.002 },
+      {  lat: this.center.lat - 0.001, lng: this.center.lng + 0.002},
+      {  lat: this.center.lat - 0.001, lng: this.center.lng + 0.001 }
+ ];
+
     let iconData : google.maps.Icon = {
       url:'./assets/img/cat_acrobat.ico',
       scaledSize : new google.maps.Size(60,60)
